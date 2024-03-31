@@ -26,7 +26,7 @@ http://localhost:5000/api/v1/post  GET ROUTE (PRIVATE ROUTE)
 then
 ### `npm install`
 then
-### `add .env file in root directory. Variable are (PORT, MONGO_URI, JWT_SECRET)`
+### `add .env file in root directory. Variables are (PORT, MONGO_URI, JWT_SECRET)`
 ### `npm run dev` 
 Runs the app in the development mode.
 ### `npm start`
