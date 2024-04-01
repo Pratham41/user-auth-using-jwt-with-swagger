@@ -1,8 +1,8 @@
 openapi: 3.0.0
 info:
-  title: Sample API
+  title: User auth using jwt
   version: 1.0.0
-  description: Sample API using Swagger
+  description: User authentication using jwt
 servers:
   - url: http://localhost:5000
     description: Local server
@@ -16,7 +16,7 @@ security:
 paths:
   /api/v1/users/login:
     post:
-      summary: Get data from a protected route
+      summary: Login user
       requestBody:
         required: true
         content:
@@ -45,7 +45,7 @@ paths:
                     description: Response message
   /api/v1/users/register:
     post:
-      summary: Get data from a protected route
+      summary: Register new user
       requestBody:
         required: true
         content:
@@ -78,7 +78,7 @@ paths:
                     description: Response message
   /api/v1/users:
     get:
-      summary: Get data from a protected route
+      summary: Get all users
       security:
         - bearerAuth: []
       responses:
@@ -94,18 +94,18 @@ paths:
                     description: Response message
   /api/v1/entries:
     get:
-      summary: Get data from a protected route
+      summary: Get data from external API
       parameters:
         - in: query
           name: Category
           schema:
             type: string
-          description: Page number for pagination (default is 1)
+          description: Category for entries
         - in: query
           name: limit
           schema:
             type: integer
-          description: Page number for pagination (default is 1)
+          description: Limit the records
       responses:
         '200':
           description: Successful response
